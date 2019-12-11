@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TodoApi.Models;
 using Microsoft.EntityFrameworkCore;
+using TodoApi.Services;
 
 namespace TodoApi
 {
@@ -30,6 +31,7 @@ namespace TodoApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var connection = Configuration["ConexaoMySql:MySqlConnectionString"];
             services.AddDbContext<TodoContext>(options => options.UseMySql(connection));
+            services.AddScoped<IEmailService, EmailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

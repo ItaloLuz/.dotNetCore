@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/italo/Documentos/DotNet/apiRest/api.net2.2/TodoApi/TodoApi.csproj": {}
+    "/home/italo/Documentos/DotNet/apiRest/dotNetCore/TodoApi.csproj": {}
   },
   "projects": {
-    "/home/italo/Documentos/DotNet/apiRest/api.net2.2/TodoApi/TodoApi.csproj": {
+    "/home/italo/Documentos/DotNet/apiRest/dotNetCore/TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/italo/Documentos/DotNet/apiRest/api.net2.2/TodoApi/TodoApi.csproj",
+        "projectUniqueName": "/home/italo/Documentos/DotNet/apiRest/dotNetCore/TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "/home/italo/Documentos/DotNet/apiRest/api.net2.2/TodoApi/TodoApi.csproj",
+        "projectPath": "/home/italo/Documentos/DotNet/apiRest/dotNetCore/TodoApi.csproj",
         "packagesPath": "/home/italo/.nuget/packages/",
-        "outputPath": "/home/italo/Documentos/DotNet/apiRest/api.net2.2/TodoApi/obj/",
+        "outputPath": "/home/italo/Documentos/DotNet/apiRest/dotNetCore/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -76,6 +80,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -86,10 +94,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
+using TodoApi.Services;
 
 namespace TodoApi.Controllers
 {
@@ -14,16 +15,19 @@ namespace TodoApi.Controllers
     public class TodoItemsController : ControllerBase
     {
         private readonly TodoContext _context;
+        private readonly IEmailService _EmailService;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(TodoContext context, IEmailService emailService)
         {
             _context = context;
+            _EmailService = emailService;
         }
 
         // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
+            _EmailService.Enviar("italobruno.duarte@gmail.com", "teste", "teste");
             return await _context.TodoItems.ToListAsync();
         }
 
